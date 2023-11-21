@@ -10,10 +10,12 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 </head>
 <body>
-    <div class="box">
+    <!-------------------------For login--------------------------------->
+    <div class="box1">
+        <div id="login">
     <div class="input-heading">
         <h1>Hello,Again!</h1>
-        <small>We are happy to to have you back</small>
+        <small>We are happy to have you back.</small>
         </div>
         <div class="input-text">
             <input type="text" class="input-box" id="logemail" required>
@@ -22,25 +24,109 @@
         <div class="input-text">
             <input type="password" class="input-box" id="logpassword" required>
             <label for="logpassword">Password</label>      
-        <div class="eye-icon">
-            <div class="eyebox" onclick="myLogPassword">
+            <div class="eyebox" onclick="myLogPassword()">
             <i class="fa fa-eye" id="eye"></i>
             <i class="fa fa-eye-slash" id="eye-slash"></i> 
             </div>
         </div>
-        </div>
         <div class="check">
-            <input type="checkbox" id="Checkbox" required>
+            <input type="checkbox" class="check-box" id="Checkbox1" required>
             <small>Remember Me</small>        
         </div>
     <div>
         <input type="submit" class="sign-in" value="Sign In">
     </div>
-    <!--<button>Login</button>
-    <button>Register</button>-->
     <div class="forget">
-    <a class="forget" href="">Forget Password?</a>  
+    <a class="forget" href="#">Forget Password?</a>  
     </div>
 </div>
+<!-----------------switch--------------------------------->
+<div class="switch">
+    <a href="#"  onclick="login()">Login</a>
+    <a href="#"  onclick="register()">Register</a>
+    <div class="btn-active" id="btn"></div>
+</div>
+<!---------------------------------------For Registering--------------------------->
+<div class="register" id="Register">
+    <div class="input-heading">
+        <h1>Sign-Up Now!</h1>
+        <small>We are happy to have you with us.</small>
+        </div>
+        <div class="input-text">
+            <input type="text" class="input-box" id="username" required>
+            <label for="username">User Name</label> 
+        </div>
+            <div class="input-text">
+            <input type="text" class="input-box" id="regemail" required>
+            <label for="regemail">Email address</label>        
+        </div>
+        <div class="input-text">
+            <input type="password" class="input-box" id="regpassword" required>
+            <label for="regpassword">Password</label>      
+        <div class="eye-icon">
+            <div class="eyebox" onclick="myregPassword()">
+            <i class="fa fa-eye" id="eye-2"></i>
+            <i class="fa fa-eye-slash" id="eye-slash-2"></i> 
+            </div>
+        </div>
+        </div>
+        <div class="check">
+            <input type="checkbox" class="check-box" id="Checkbox2" required>
+            <small>Remember Me</small>        
+        </div>
+    <div>
+        <input type="submit" class="sign-in" value="Sign Up">
+    </div>
+</div>
+</div>
 </body>
+<script>
+    /*Choosing register or Login*/
+    var x=document.getElementById('login');
+    var y=document.getElementById('Register');
+    var z=document.getElementById('btn');
+    function login(){
+        x.style.left="27px";
+        y.style.left="100%";
+        z.style.left="0px";
+    }
+    function register(){
+        x.style.left="-100%";
+        y.style.left="25px";
+        z.style.left="135px";
+    }
+    /*********view Password*********/
+    function myLogPassword(){
+        var a=document.getElementById('logpassword');
+        var b=document.getElementById('eye');
+        var c=document.getElementById('eye-slash');
+        if(a.type==="password"){
+            a.type="text";
+            b.style.opacity="1";
+            c.style.opacity="0";
+        }
+        else{
+            a.type="password";
+            b.style.opacity="0";
+            c.style.opacity="1";
+        }
+    }
+
+    function myregPassword(){
+        var a=document.getElementById('regpassword');
+        var b=document.getElementById('eye-2');
+        var c=document.getElementById('eye-slash-2');
+        if(a.type==="password"){
+            a.type="text";
+            b.style.opacity="1";
+            c.style.opacity="0";
+        }
+        else{
+            a.type="password";
+            b.style.opacity="0";
+            c.style.opacity="1";
+        }
+    }
+
+</script>
 </html>
